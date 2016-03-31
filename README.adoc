@@ -1,0 +1,3 @@
+= Dolphon Platform Jumpstart Lazybones template project
+
+Lazybones project for Dolphin Platform Jumpstart projects.

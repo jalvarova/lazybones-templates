@@ -1,0 +1,3 @@
+dependencies{
+	compile 'com.canoo.dolphin-platform:dolphin-platform-core:${dolphin_platform_version}'
+}

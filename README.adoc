@@ -1,6 +1,6 @@
 = Dolphin Platform Jumpstart Lazybones templates
 
-Lazybones project for http://dolphin-platform.io[Dolphin Platform] templates.
+Lazybones project for http://dolphin-platform.io[Dolphin Platform] (https://github.com/canoo/dolphin-platform[GitHub Project]) templates.
 
 == Templates Available
 

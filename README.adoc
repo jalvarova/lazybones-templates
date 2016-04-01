@@ -1,3 +1,57 @@
-= Dolphin Platform Jumpstart Lazybones templates project
+= Dolphin Platform Jumpstart Lazybones templates
 
-Lazybones project for Dolphin Platform templates.
+Lazybones project for http://dolphin-platform.io[Dolphin Platform] templates.
+
+== Templates Available
+
+dolphin-platform-spring-boot:: Jumpstart template for a Dolphin Platform project with Spring Boot.
+
+
+== Usage
+
+To actually use the template you need to have lazybones installed. The easiest way to get it is via  http://sdkman.io/[SDKMAN].
+So first, let's install that:
+
+----
+$ curl -s http://get.sdkman.io | bash
+----
+
+(Windows users: look for the https://github.com/flofreud/posh-gvm[Powershell version])
+
+Then, we can use it to install gradle and lazybones:
+
+----
+$ sdk install lazybones
+$ sdk install gradle
+----
+
+Next register the dolphin-platform-lazybones-templates repository with Lazybones' config file. Edit `$USER_HOME/.lazybones/config.groovy`
+
+----
+bintrayRepositories = [
+    "canoo/dolphin-platform-lazybones-templates",
+    "pledbrook/lazybones-templates"
+]
+----
+
+If everything is fine, issuing the command
+
+----
+$ lazybones list
+----
+
+should list the Dolphin Platform template:
+
+----
+Available templates in canoo/dolphin-platform-lazybones-templates
+
+    dolphin-platform-spring-boot
+----
+
+Now, we can use it to create a new Dolphin Platform project:
+
+----
+$ lazybones create dolphin-platform-spring-boot MyProject
+----
+
+To get an idea on how to proceed from here, have a look at the https://github.com/canoo/dolphin-platform-lazybones-templates/blob/master/templates/dolphin-platform-spring-boot/README.adoc[template README] of the generated project.

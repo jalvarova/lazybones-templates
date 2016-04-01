@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "uk.co.cacoethes:lazybones-gradle:1.2"
+        classpath "uk.co.cacoethes:lazybones-gradle:1.2.3"
     }
 }
 
@@ -15,6 +15,9 @@ apply plugin: "uk.co.cacoethes.lazybones-templates"
 lazybones {
     repositoryName = "canoo/dolphin-platform-lazybones-templates"
 
-    repositoryUsername = project.repo.username
-    repositoryApiKey = project.repo.apiKey
+    repositoryUsername = project.bintrayUsername
+    repositoryApiKey = project.bintrayApiKey
+
+    licenses = ["Apache-2.0"]
+    //vcsUrl = "https://github.com/canoo/dolphin-platform-lazybones-templates"
 }

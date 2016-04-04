@@ -1,16 +1,21 @@
 buildscript {
     repositories {
         maven {
-            url "http://dl.bintray.com/pledbrook/plugins"
+            url 'http://dl.bintray.com/pledbrook/plugins'
         }
+        jcenter()
     }
 
     dependencies {
-        classpath "uk.co.cacoethes:lazybones-gradle:1.2.3"
+        classpath 'uk.co.cacoethes:lazybones-gradle:1.2.4'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.12.0'
+  
     }
 }
 
-apply plugin: "uk.co.cacoethes.lazybones-templates"
+apply plugin: 'uk.co.cacoethes.lazybones-templates'
+apply plugin: 'com.github.ben-manes.versions'
+
 
 lazybones {
     repositoryName = "canoo/dolphin-platform-lazybones-templates"
@@ -19,5 +24,5 @@ lazybones {
     repositoryApiKey = project.bintrayApiKey
 
     licenses = ["Apache-2.0"]
-    //vcsUrl = "https://github.com/canoo/dolphin-platform-lazybones-templates"
+    vcsUrl = "https://github.com/canoo/dolphin-platform-lazybones-templates"
 }

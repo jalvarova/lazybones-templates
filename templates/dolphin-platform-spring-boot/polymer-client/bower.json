@@ -19,6 +19,6 @@
     "dolphin-polymer": "${dolphin_platform_version}"
   },
   "resolutions": {
-    "polymer": "1.1.5"
+    "polymer": ">=1.0.4 <=1.4.0"
   }
 }

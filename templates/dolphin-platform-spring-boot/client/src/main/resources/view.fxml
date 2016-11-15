@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="rootNode" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="BASELINE_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="6.0">
          <children>

@@ -1,5 +1,7 @@
 package ${project_package};
 
+import java.net.URL;
+
 import com.canoo.dolphin.client.ClientConfiguration;
 import com.canoo.dolphin.client.ClientContext;
 import com.canoo.dolphin.client.ClientContextFactory;
@@ -29,7 +31,7 @@ public class ClientApplication extends Application {
     @Override
     public void init() throws Exception {
         //Creates a configuration for the Dolphin Platform. Here the server endpoint is configured
-        ClientConfiguration config = new JavaFXConfiguration("http://localhost:8080/dolphin");
+        ClientConfiguration config = new JavaFXConfiguration(new URL("http://localhost:8080/dolphin"));
 
         //Creates the global client context based on the configuration
         clientContext = ClientContextFactory.connect(config).get();

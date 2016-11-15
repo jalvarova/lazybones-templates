@@ -16,7 +16,7 @@ props.project_package = ask("Define value for 'package' [" + props.project_group
 props.project_class_name = ask("Define value for 'className' [" + props.project_class_name + "]: ", props.project_class_name, "className").capitalize()
 props.project_property_name = transformText(props.project_class_name, from: NameType.CAMEL_CASE, to: NameType.PROPERTY)
 props.project_capitalized_name = props.project_property_name.capitalize()
-props.dolphin_platform_version = '0.8.5'
+props.dolphin_platform_version = '0.8.8'
 String packagePath = props.project_package.replace('.' as char, '/' as char)
 
 processTemplates 'pom.xml', props

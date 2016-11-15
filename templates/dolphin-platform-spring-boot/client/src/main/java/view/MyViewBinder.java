@@ -1,22 +1,27 @@
 package ${project_package}.view;
 
+import javafx.scene.Node;
+import javafx.scene.layout.StackPane;
 import ${project_package}.Constants;
 import ${project_package}.model.MyModel;
 import com.canoo.dolphin.client.ClientContext;
-import com.canoo.dolphin.client.javafx.AbstractViewBinder;
-import com.canoo.dolphin.client.javafx.FXBinder;
+import com.canoo.dolphin.client.javafx.view.AbstractViewBinder;
+import com.canoo.dolphin.client.javafx.binding.FXBinder;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 /**
- * This class binds a view isnatnce that is created based on the view.fxml (see ClientApplication class).
- * The class extends the {@link AbstractViewBinder} class that is part of the basic DOlphin Platform JavaFX client API and
+ * This class binds a view instance that is created based on the view.fxml (see ClientApplication class).
+ * The class extends the {@link AbstractViewBinder} class that is part of the basic Dolphin Platform JavaFX client API and
  * already defines the lifecycle of the view and offers several properties and features. When extending this class normally
  * only the init() method need to be defined. Here all the UI components should be bound to the model taht is synchronized
  * between client and server.
  */
 public class MyViewBinder extends AbstractViewBinder<MyModel> {
+
+    @FXML
+    private StackPane stackPane;
 
     /**
      * This UI control is automatically injected by FXML
@@ -31,7 +36,7 @@ public class MyViewBinder extends AbstractViewBinder<MyModel> {
     private Button resetButton;
 
     /**
-     * The constructor calls the super constructor taht initializes the view lifecycle that is defined by Dolphin Platform.
+     * The constructor calls the super constructor that initializes the view lifecycle that is defined by Dolphin Platform.
      * This will automatically create a controller instance on the server. In addition the model of this MVC group will
      * be created and synchronized between client and server.
      * @param clientContext the global client context
@@ -42,7 +47,7 @@ public class MyViewBinder extends AbstractViewBinder<MyModel> {
 
     /**
      * This method is called when the Dolphin Platform bootstrap for the view is finished. This means that a controller
-     * isntance has been created on the server and the model for the MVC group was instantiated on the client and the server.
+     * instance has been created on the server and the model for the MVC group was instantiated on the client and the server.
      * In this client the model is bound to the UI. In addition user interaction that will trigger controller actions is
      * defined.
      */
@@ -54,5 +59,10 @@ public class MyViewBinder extends AbstractViewBinder<MyModel> {
 
         // pressing the button will invoke the reset action on the controller instance on the server
         resetButton.setOnAction(e -> invoke("reset"));
+    }
+
+    @Override
+    public Node getRootNode() {
+        return stackPane;
     }
 }

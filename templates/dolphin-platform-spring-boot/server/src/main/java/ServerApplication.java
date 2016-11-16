@@ -2,7 +2,7 @@ package ${project_package};
 
 import com.canoo.dolphin.server.spring.DolphinPlatformApplication;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @DolphinPlatformApplication
 public class ServerApplication extends SpringBootServletInitializer {

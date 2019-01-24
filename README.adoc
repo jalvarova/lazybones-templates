@@ -21,6 +21,8 @@ UI, and finally publish the templates with
 
     ./gradlew publishAllTemplates
 
+
+
 You can find out more about creating templates on [the GitHub wiki][1].
 
 [1]: https://github.com/pledbrook/lazybones/wiki/Template-developers-guide

@@ -1,8 +1,0 @@
-apply plugin: 'application'
-
-mainClassName = '${project_package}.ClientApplication'
-
-dependencies{
-	compile project(':common')
-	compile 'com.canoo.dolphin-platform:dolphin-platform-client-javafx:${dolphin_platform_version}'
-}

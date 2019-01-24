@@ -18,11 +18,11 @@ apply plugin: 'com.github.ben-manes.versions'
 
 
 lazybones {
-    repositoryName = "canoo/dolphin-platform-lazybones-templates"
+    repositoryName = "joedayz/lazybones-templates"
 
     repositoryUsername = project.bintrayUsername
     repositoryApiKey = project.bintrayApiKey
 
     licenses = ["Apache-2.0"]
-    vcsUrl = "https://github.com/canoo/dolphin-platform-lazybones-templates"
+    vcsUrl = "https://github.com/joedayz/lazybones-templates"
 }

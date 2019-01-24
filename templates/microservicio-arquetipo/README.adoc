@@ -1,0 +1,25 @@
+# Microservicio Arquetipo
+
+
+This automatically created project can be used as a basic skeleton for a Micro Service:
+
+- Domain
+- Config
+- Util
+- Service
+- Repository
+- Controller
+- Constant
+
+## How to use it
+
+The project is created with a maven build. You can directly import it in any IDE that supports maven (like Eclipse or IntelliJ).
+If you want to start the application you need to start the ProyectoApplication.java.
+
+If you want to start the application from commandline without IDE support you can use the following commands:
+
+Run the server from the microservicio-arquetipo folder
+```
+cd microservicio-arquetipo
+mvn spring-boot:run
+```

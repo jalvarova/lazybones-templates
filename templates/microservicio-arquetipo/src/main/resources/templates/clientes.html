@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+
+    <title>Backend Ninja - Signin</title>
+
+    <!-- Bootstrap core CSS -->
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+	  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></link>
+	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+    
+ 	<link href="#" th:href="@{/css/contacts.css}" rel="stylesheet" />
+ 	
+  </head>
+
+  <body>
+
+  <div class="container body-content">
+	  <div class="page-header">
+		  <div class="container">
+			  <h1 class="center">Listado de clientes</h1>
+		  </div>
+		  <div class="form-group">
+			  <fieldset>
+				  <form action="" class="form-group" method="post">
+					  <div class="table-responsive">
+						  <button>exportar</button>
+						  <table id="clientes" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped">
+							  <thead>
+							  <tr>
+								  <th class="th-sm">Fecha de registro</th>
+								  <th class="th-sm">Nombres</th>
+								  <th class="th-sm">Apellido Paterno</th>
+								  <th class="th-sm">Apellido Materno</th>
+								  <th class="th-sm">DNI</th>
+								  <th class="th-sm">Celular</th>
+								  <th class="th-sm">Correo</th>
+								  <th class="th-sm">Comprobante</th>
+
+							  </tr>
+							  </thead>
+							  <tbody>
+							  <tr th:each="cliente : ${clientes}">
+								  <td th:text="${cliente.fecha_registro}"></td>
+								  <td th:text="${cliente.nombres}"></td>
+								  <td th:text="${cliente.apaterno}"></td>
+								  <td th:text="${cliente.amaterno}"></td>
+								  <td th:text="${cliente.dni}"></td>
+								  <td th:text="${cliente.celular}"></td>
+								  <td th:text="${cliente.correo}"></td>
+								  <td th:text="${cliente.comprobante}"></td>
+							  </tr>
+
+							  </tbody>
+						  </table>
+					  </div>
+				  </form>            <!--END OF FORM ^^-->
+			  </fieldset>
+		  </div>
+		  <hr />
+	  </div>
+	  <div th:if="${result == 1}" class="alert alert-success" role="alert">Added successfully!</div>
+	  <div th:if="${result == 0}" class="alert alert-danger" role="alert">Error adding contact!</div>
+
+	  <a href="#" th:href="@{/clienteform?id=0}">
+		  <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Add contact</button>
+	  </a>
+	  <a href="#" th:href="@{/login?logout}">
+		  <button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</button>
+	  </a>
+  </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#clientes').DataTable();
+        } );
+	</script>
+
+</body>
+</html>

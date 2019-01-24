@@ -1,10 +1,36 @@
-= Dolphin Platform Jumpstart Lazybones templates
 
-Lazybones project for http://dolphin-platform.io[Dolphin Platform] (https://github.com/canoo/dolphin-platform[GitHub Project]) templates.
+
+Lazybones template project
+--------------------------
+
+You have just created a simple project for managing your own Lazybones project
+templates. You get a build file (`build.gradle`) and a directory for putting
+your templates in (`templates`).
+
+To get started, simply create new directories under the `templates` directory
+and put the source of the different project templates into them. You can then
+package and install the templates locally with the command:
+
+    ./gradlew installAllTemplates
+
+You'll then be able to use Lazybones to create new projects from these templates.
+If you then want to distribute them, you will need to set up a Bintray account,
+populate the `repositoryUrl`, `repositoryUsername` and `repositoryApiKey` settings
+in `build.gradle`, add new Bintray packages in the repository via the Bintray
+UI, and finally publish the templates with
+
+    ./gradlew publishAllTemplates
+
+You can find out more about creating templates on [the GitHub wiki][1].
+
+[1]: https://github.com/pledbrook/lazybones/wiki/Template-developers-guide
+
+
+
 
 == Templates Available
 
-dolphin-platform-spring-boot:: Jumpstart template for a Dolphin Platform project with Spring Boot.
+microservicio-arquetipo:: Jumpstart template for a Microservice project with Spring Boot.
 
 
 == Usage
@@ -25,11 +51,11 @@ $ sdk install lazybones
 $ sdk install gradle
 ----
 
-Next register the dolphin-platform-lazybones-templates repository with Lazybones' config file. Edit `$USER_HOME/.lazybones/config.groovy`
+Next register the lazybones-templates repository with Lazybones' config file. Edit `$USER_HOME/.lazybones/config.groovy`
 
 ----
 bintrayRepositories = [
-    "canoo/dolphin-platform-lazybones-templates",
+    "joedayz/lazybones-templates",
     "pledbrook/lazybones-templates"
 ]
 ----
@@ -40,18 +66,18 @@ If everything is fine, issuing the command
 $ lazybones list
 ----
 
-should list the Dolphin Platform template:
+should list the Intercorp Retail template:
 
 ----
-Available templates in canoo/dolphin-platform-lazybones-templates
+Available templates in joedayz/lazybones-templates
 
-    dolphin-platform-spring-boot
+    microservicio-arquetipo
 ----
 
 Now, we can use it to create a new Dolphin Platform project:
 
 ----
-$ lazybones create dolphin-platform-spring-boot MyProject
+$ lazybones create microservicio-arquetipo MyProject
 ----
 
-To get an idea on how to proceed from here, have a look at the https://github.com/canoo/dolphin-platform-lazybones-templates/blob/master/templates/dolphin-platform-spring-boot/README.adoc[template README] of the generated project.
+To get an idea on how to proceed from here, have a look at the https://github.com/joedayz/lazybones-templates/blob/master/templates/microservicio-arquetipo/README.adoc[template README] of the generated project.
